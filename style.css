@@ -29,23 +29,36 @@ header{
     color: white;
     cursor: pointer;
 }
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
 
-.navbar ul{
+.navbar{
     display: flex;
     gap: 50px;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    transition: box-shadow 0.3s;
 }
-.navbar ul li{
+.navbar.scrolled {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar li{
     list-style: none;
 }
-.navbar ul li a{
+.navbar li a{
     text-decoration: none;
     font-size: 20px;
     color: white;
     margin: 0 15px;
     transition: color 0.3s ease;
 }
-.navbar ul li a:hover{
+.navbar li a:hover{
     color: #0077cc;
     
 }
@@ -146,56 +159,56 @@ button:hover{
 }
 /* Education */
 
-#education {
-  padding: 60px 20px;
-  background-color: rgb(2, 28, 46);
-  color: #ffffff;
-}
+  #education {
+    padding: 60px 20px;
+    background-color: rgb(2, 28, 46);
+    color: #ffffff;
+  }
 
-#education h2 {
-  font-size: 4rem;
-  text-align: center;
-  margin-bottom: 40px;
-  color: #fff;
-}
+  #education h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+  }
 
-.education-item {
-  max-width: 800px;
-  margin: 0 auto 30px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-left: 5px solid #0077cc;
-  background-color: rgb(2, 58, 98);
-  border-radius: 50px;
-  cursor: pointer;
-  transition: .3s;
-}
-.education-item:hover{
-    border-radius: 30px;
-    background: #0077cc;
-}
+  .education-item {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 5px solid #0077cc;
+    background-color: rgb(2, 58, 98);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .education-item:hover{
+      border-radius: 30px;
+      background: #0077cc;
+  }
 
-.education-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-  color: #ffffff;
-}
+  .education-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
 
-.education-item p {
-  margin: 4px 0;
-  font-size: 1rem;
-}
+  .education-item p {
+    margin: 4px 0;
+    font-size: 1rem;
+  }
 
-.education-item ul {
-  margin-top: 10px;
-  padding-left: 20px;
-}
+  .education-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
 
-.education-item ul li {
-  list-style-type: disc;
-  font-size: 0.95rem;
-  margin-bottom: 5px;
-}
+  .education-item ul li {
+    list-style-type: disc;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
 /* Services */
 #services{
     padding: 30px 0;
@@ -421,139 +434,165 @@ textarea {
 
 .contact-icons a:hover {
   color: #1e40af;
+  
 }
 
-/* -------------------- Fully Responsive Styling (Phones & Small Devices) -------------------- */
+/*----------------------------------------------------------- Responsive------------------------------------------------------------ */
 @media (max-width: 768px) {
-  /* Header & Navbar */
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 10px;
-  }
+    .hamburger {
+        display: block;
+    }
 
-  .navbar ul {
-    flex-direction: column;
-    gap: 12px;
-    padding: 10px 0;
-    align-items: center;
-  }
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgb(2, 58, 98);
+        width: 100%;
+    }
 
-  .navbar ul li a {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
+    .navbar.active {
+        display: flex;
+    }
+}
+@media (max-width: 768px) {
+    #profile {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  /* Profile Section */
-  #profile {
-    flex-direction: column;
-    padding: 30px 20px;
-    height: auto;
-    text-align: center;
-  }
+    .profile-left {
+        width: 100%;
+    }
 
-  .profile-left,
-  .profile-right {
-    width: 100%;
-  }
+    .profile-right img {
+        width: 80%;
+    }
 
-  .profile-left h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 
-  .profile-left p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
+    .portfolio-item {
+        width: 90%;
+    }
+    body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #e0e0e0;
+}
+.profile-right img:hover {
+    box-shadow: 0 0 20px rgba(0, 119, 204, 0.6);
+}
 
-  .profile-right {
-    margin-top: 20px;
-    justify-content: center;
-  }
+button:hover {
+    transform: scale(1.05);
+}
 
-  .profile-right img {
-    width: 200px;
-    max-width: 90%;
-    height: auto;
-  }
+}
 
-  button {
-    width: 90%;
-    padding: 14px;
-    font-size: 16px;
-    margin: 12px auto;
-    display: block;
-  }
 
-  /* Education Section */
-  #education h2 {
-    font-size: 2rem;
-    text-align: center;
-    padding: 10px 0;
-  }
+/* Javascript 2 */
 
-  .education-item {
-    margin: 15px auto;
-    padding: 15px;
-    border-radius: 16px;
-  }
+#scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #eee;
+  z-index: 9999;
+}
 
-  /* Services Section */
-  #services {
-    padding: 40px 20px;
-  }
+#scroll-progress {
+  height: 100%;
+  width: 0;
+  background: #4000ff;
+  transition: width 0.25s ease;
+}
 
-  .sub-title {
-    font-size: 2rem;
-    text-align: center;
-  }
+/* javascript 3 */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 40px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 50px;
+  width: 50px;
+}
 
-  .services-list {
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
+/* javascript 4 */
 
-  .services-list div {
-    padding: 15px;
-    border-radius: 16px;
-  }
+ .contact-box {
+  background-color: #1f2937;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: white;
+}
 
-  /* Portfolio Section */
-  #portfolio {
-    padding: 30px 15px;
-  }
+.contact-box h2 {
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
-  #portfolio h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
+.contact-box p {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .portfolio-item {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 16px;
-  }
+.contact-box .row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-  .class-content h1 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-  }
+.contact-box input,
+.contact-box textarea {
+  background: #2d2d2d;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
 
-  .class-content h2 {
-    font-size: 1.2rem;
-    color: #ccc;
-  }
+.contact-box input::placeholder,
+.contact-box textarea::placeholder {
+  color: #ccc;
+}
 
-  /* Contact Icons */
-  .contact-icons {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
-  }
+.contact-box button {
+  background: #3b82f6;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
 
-  .contact-icons i {
-    font-size: 22px;
-  }
+.contact-box button:hover {
+  background: #2563eb;
+}
+
+#form-feedback {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
 }
