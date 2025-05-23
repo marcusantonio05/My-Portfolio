@@ -1,4 +1,4 @@
-  const sentences = [
+ const sentences = [
     { text: "I’m a hands-on learner with a heart to serve.", color: "#ff6347" },  // Tomato
     { text: "I repair and troubleshoot computer systems.", color: "#3b82f6" },    // Blue
     { text: "I serve in the multimedia and IT team at church.", color: "#32cd32" }, // Lime Green
@@ -86,3 +86,26 @@ backToTop.addEventListener("click", () => {
     return false; // Prevent form reload
   }
 
+// javascript 5
+document.body.addEventListener("click", () => {
+  const emoji = document.createElement("div");
+  emoji.textContent = "👽";
+  emoji.style.position = "fixed";
+  emoji.style.left = Math.random() * 100 + "vw";
+  emoji.style.top = "-2em";
+  emoji.style.fontSize = "2em";
+  emoji.style.animation = "fall 2s linear";
+  document.body.appendChild(emoji);
+
+  setTimeout(() => emoji.remove(), 2000);
+});
+
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}`;
+document.head.appendChild(style);
