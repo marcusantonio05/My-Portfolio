@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Mark Antony | Portfolio</title>
-    <script src="https://kit.fontawesome.com/ab66a32ed6.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/ab66a32ed6.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
     <header>
-        <h1 class="logo">MAV</h1>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1 class="logo">MAV</h1>
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+        <ul class="navbar">
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+
+        </ul>
+    </nav>
+</header>
+
 
  <div id="profile">
     <div class="profile-left">
@@ -39,12 +44,12 @@
                 Hire Me
               </a>
             </button>
-            <button><a href="My Resume.pdf" download class="download-btn">Download Resume</a></button>
+            <button><a href="/files/My Resume.pdf" download class="download-btn">Download Resume</a></button>
     </div>
 
-    <div class="profile-right">
-        <a href="me.jpg" data-lightbox="projects"><img src="me.jpg" alt="My Photo"></a>
-
+    <div class="profile-right">     
+                                                                             
+        <img src="/img/me.jpg" alt="My Photo">
     </div>
     
 </div>
@@ -57,6 +62,7 @@
     <p><strong>CITE Technical Institute, Inc.</strong> – 2021–2024</p>
     <p>Specialization in Computer Systems Servicing (CSS)</p>
     <ul>
+      <li>COC Holder – CSS NC II (COC 1–4)</li>
       <li>Skills: Tech Support, Graphic Design, Java & C Programming, PCB Layouting</li>
     </ul>
   </div>
@@ -69,7 +75,6 @@
   <div class="education-item">
     <h3>Certifications</h3>
     <ul>
-      <li>TESDA Certificate of Competency (COC 1–4), CSS NC II</li>
       <li>Computer Systems Servicing NC II – TESDA Certified</li>
       <li>On-the-Job Training: House-to-house PC Troubleshooting & Repair</li>
     </ul>
@@ -155,6 +160,16 @@
             <p>Created my own Christian clothing brand concept with shirt mockups and logo design.</p>
             <a href="https://drive.google.com/drive/folders/1GfdSyLFRSbmWXtqCaVk74aOSl96FsMip?usp=sharing" target="_blank" class="view-btn">See Design</a>
       </div>
+
+      <div class="portfolio-item">
+            <h3>Simple JavaScript Project</h3>
+            <p>Developed an interactive web-based mini application using HTML, CSS, and JavaScript. This project showcases dynamic user interaction and basic logic implementation using vanilla JavaScript.</p>
+            <a href="https://marcusantonio05.github.io/Calculator/" target="_blank" class="view-btn">1st Project</a>
+            <a href="YOUR_PROJECT_LINK_HERE" target="_blank" class="view-btn">2nd Project</a>
+
+      </div>
+
+
 </section>      
 <!-- ------------------------------------------- Footer --------------------------------------------------------------------------------- -->
 <section id="contacts" class="class-section">
@@ -164,6 +179,24 @@
     <p class="tagline">
       "Equipped with technical skills and a heart to serve — from systems to storytelling."
     </p>
+    
+    <!-- form -->
+     <div class="contact-box">
+  <h2>Contact Me</h2>
+  <p>Feel free to contact me with any inquiries or questions!</p>
+
+  <form onsubmit="return handleContactSubmit()">
+    <div class="row">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+    </div>
+    <textarea id="message" rows="4" placeholder="Message" required></textarea>
+    <button type="submit">Submit</button>
+    <div id="form-feedback"></div>
+  </form>
+</div>
+
+
     <div class="contact-icons">
       <a href="https://www.facebook.com/Exemark00" target="_blank"><i class="fab fa-facebook-f"></i></a>
       <a href="mailto:markvillarubia14@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
@@ -171,7 +204,13 @@
       <a href="https://www.linkedin.com/in/mark-villarubia-528630365/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 
-    
+
+    <button id="backToTop" title="Go to top">↑</button>
+    <div id="scroll-progress-container">
+    <div id="scroll-progress"></div>
+    </div>
+
+  
     
 </section>
 <script src="script.js"></script>
