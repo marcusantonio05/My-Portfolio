@@ -1,22 +1,3 @@
-// var typed = new Typed('.rotator', {
-//   strings: [
-//     "I’m a hands-on learner with a heart to serve.",
-//     "I repair and troubleshoot computer systems.",
-//     "I serve in the multimedia and IT team at church.", 
-//     "I edit videos for church events and presentations.", 
-//     "I design websites and posters with purpose.",   
-//     "I founded Luwas Threads, a Christian clothing brand.", 
-//     "I believe in working hard and staying humble.",  
-//     "I am passionate about creativity and technology.", 
-//     "I use my skills to glorify God and serve others.", 
-//     "Every project is a new chance to grow and learn."
-//   ],
-//   typeSpeed: 100,
-//   backSpeed: 100,
-//   loop: true
-// });
-
-
   const sentences = [
     { text: "I’m a hands-on learner with a heart to serve.", color: "#ff6347" },  // Tomato
     { text: "I repair and troubleshoot computer systems.", color: "#3b82f6" },    // Blue
@@ -49,4 +30,59 @@
   // Start rotation
   rotateText();
   setInterval(rotateText, 6000); // Change every 5 seconds
+
+
+
+// burger Js
+function toggleMenu() {
+    document.querySelector('.navbar').classList.toggle('active');
+}
+
+// javascript 2 
+
+window.addEventListener('scroll', () => {
+  const scrollProgress = document.getElementById('scroll-progress');
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (scrollTop / scrollHeight) * 100;
+  scrollProgress.style.width = scrolled + '%';
+});
+
+// javascript 3
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// JAVASCRIPT 4
+
+
+  function handleContactSubmit() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const feedback = document.getElementById("form-feedback");
+
+    if (!name || !email || !message) {
+      feedback.textContent = "Please fill out all fields.";
+      feedback.style.color = "red";
+      return false;
+    }
+
+   
+
+    feedback.textContent = "Message sent! Thank you.";
+    feedback.style.color = "lightgreen";
+
+    name.value = "";
+    email.value = "";
+    message.value = "";  
+    return false; // Prevent form reload
+  }
 
